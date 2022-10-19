@@ -209,37 +209,50 @@ section:last-of-type {
     margin-top: 10%;
 }
 
-.cards-wrapper {
+.featured_cards-wrapper {
     display: flex;
     flex-direction: row;
     align-items: center;
     margin: 0 auto;
 }
 
-.card {
+.f-card {
     padding: 5%;
     margin-top: 5%;
-    width: 33%;
+    width: 30%;
+    height: 400px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.card h1 {
+.featured_card {
+    background-color: #fff;
+}
+
+.featured_card h1 {
     padding-top: 5%;
     padding-bottom: 5%;
 }
 
-.card-icon {
+.featured_card-icon {
     color: #F5B162;
+    width: 100px;
 }
 
-.card.active {
+.featured_card_active {
     background-color: #F5B162;
 }
 
-.hover-image {
+.hover-image-active {
     position: absolute;
     top: 0;
     right: 0;
+}
+
+.hover-image {
+    display: none;
 }
 
 .container.video {
@@ -278,20 +291,10 @@ section:last-of-type {
     margin-bottom: 5%;
 }
 
-.product-card.big {
-    background-image: url("images/pr-card-big1.png");
-    background-size: cover;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: flex-end;
-    width: 100%;
-    padding: 5%;
-}
-
 .product-card.big h1 {
     color: #fff;
 }
+
 
 .product-card.small {
     max-width: 370px;
@@ -309,8 +312,9 @@ section:last-of-type {
 
 .products-wrapper {
     display: flex;
-    flex-wrap: wrap;
     justify-content: space-between;
+    align-items: center;
+    position: relative;
     margin-bottom: 5%;
 
 }
@@ -358,6 +362,7 @@ section:last-of-type {
 }
 
 .cards-wrapper.recipes {
+    display:flex;
     justify-content: space-between;
     margin-bottom: 10%;
 }
@@ -523,7 +528,7 @@ section:last-of-type {
     #bread1 {
         right: 0
     }
-    .card{
+    .f-card{
         padding: 2%;
     }
 }
@@ -541,15 +546,22 @@ section:last-of-type {
     .aboutpage-content {
         flex-direction: column;
     }
-    .cards-wrapper{
+    .featured_cards-wrapper{
         flex-direction: column;
         padding:5%;
     }
-    .hover-image {
+    .featured_hover_image  {
         width: 40%
     }
-    .card > .main-text {
+    .f-card > .main-text {
         font-size: 56px;
+    }
+    .f-card {
+        width: 50%;
+        justify-content: center;
+    }
+    .featured_card-icon {
+        width: 60px;
     }
     .primary-text.rec-card  {
         padding-bottom: 15%;
@@ -572,7 +584,7 @@ section:last-of-type {
     .image-content {
         max-width: none;
     }
-    .card > .main-text {
+    .f-card > .main-text {
         font-size: 48px;
     }
     #video-grains {
@@ -623,11 +635,11 @@ section:last-of-type {
     .aboutpage-content{
         text-align: center;
     }
-    .card > .main-text {
-        font-size: 38px;
+    .f-card > .main-text {
+        font-size: 24px;
     }
-    .card > .primary-text {
-        font-size: 16px;
+    .f-card > .primary-text {
+        font-size: 12px;
     }
     .video-text-wrapper > .main-text {
         font-size: 52px;
