@@ -295,6 +295,18 @@ section:last-of-type {
     color: #fff;
 }
 
+.products-wrapper::after {
+    content: '\203A';
+    color: black;
+    font-size: 128px;
+    padding:5px;
+}
+.products-wrapper::before {
+    content: '\2039';
+    color: black;
+    font-size: 128px;
+    padding: 5px;
+}
 
 .product-card.small {
     max-width: 370px;
