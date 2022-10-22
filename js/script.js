@@ -118,5 +118,41 @@ featuredCardsContainer.addEventListener('mouseover', (e) => {
 	}
 });
 
+const slides = document.querySelectorAll('.product-card'),
+	prevBtn = document.querySelector('.slide-to-prev'),
+	nextBtn = document.querySelector('.slide-to-next'),
+	slidesWrapper = document.querySelector('.products-wrapper'),
+	slidesField = document.querySelector('.products__wrapper-inner'),
+	width = window.getComputedStyle(slidesWrapper).width;
 
+let slideOffset = 0;
 
+slidesField.style.width = 100 * slides.length + '%';
+slidesField.style.transition = '0.7s all';
+slidesField.style.display = 'flex';
+
+slidesWrapper.style.overflow = 'hidden';
+
+/*slides.forEach(slide => {
+	slide.style.width = width;
+})*/
+
+nextBtn.addEventListener('click', () => {
+	if (slideOffset === (+width.slice(0, width.length - 2) * (slides.length / 4 ))){
+		slideOffset = 0;
+	} else {
+		slideOffset += +width.slice(0, width.length - 2);
+	}
+
+	slidesField.style.transform = `translateX(-${slideOffset}px)`;
+})
+
+prevBtn.addEventListener('click', () => {
+	if (slideOffset === 0){
+		slideOffset = +width.slice(0, width.length - 2) * (slides.length / 4);
+	} else {
+		slideOffset -= +width.slice(0, width.length - 2);
+	}
+
+	slidesField.style.transform = `translateX(-${slideOffset}px)`;
+})
