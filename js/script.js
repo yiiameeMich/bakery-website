@@ -137,8 +137,10 @@ slidesWrapper.style.overflow = 'hidden';
 	slide.style.width = width;
 })*/
 
+let slidesMath = (slides.length % 2 === 0 ? slides.length - 2 : slides.length - 3)
+
 nextBtn.addEventListener('click', () => {
-	if (slideOffset === (+width.slice(0, width.length - 2) * (slides.length / 4 ))){
+	if (slideOffset === (+width.slice(0, width.length - 2) * (slides.length - slidesMath ))){
 		slideOffset = 0;
 	} else {
 		slideOffset += +width.slice(0, width.length - 2);
@@ -149,7 +151,7 @@ nextBtn.addEventListener('click', () => {
 
 prevBtn.addEventListener('click', () => {
 	if (slideOffset === 0){
-		slideOffset = +width.slice(0, width.length - 2) * (slides.length / 4);
+		slideOffset = +width.slice(0, width.length - 2) * (slides.length - slidesMath);
 	} else {
 		slideOffset -= +width.slice(0, width.length - 2);
 	}
