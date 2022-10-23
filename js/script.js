@@ -28,8 +28,8 @@ const hideContent = () => {
 	});
 
 	aboutInfoPars.forEach(par => {
-			par.classList.remove('about__item_active');
-			par.classList.add('about__item_disabled');
+		par.classList.remove('about__item_active');
+		par.classList.add('about__item_disabled');
 	})
 
 	aboutInfoHeadings.forEach(head => {
@@ -51,16 +51,16 @@ hideContent();
 showContent();
 
 aboutButtonsParent.addEventListener('click', (event) => {
-		const target = event.target;
+	const target = event.target;
 
-		if (target && target.classList.contains('info-btn')){
-				aboutButtons.forEach((btn, i) => {
-					if (target === btn) {
-						hideContent();
-						showContent(i);
-					}
-				})
-		}
+	if (target && target.classList.contains('info-btn')) {
+		aboutButtons.forEach((btn, i) => {
+			if (target === btn) {
+				hideContent();
+				showContent(i);
+			}
+		})
+	}
 })
 
 const featuredCardsContainer = document.querySelector('.featured_cards-wrapper'),
@@ -85,8 +85,8 @@ const makeCardsInactive = () => {
 		}
 	})
 
-	featuredCardIcon.forEach((icon,i) => {
-		icon.src = `images/icons/icon${i+1}.png`
+	featuredCardIcon.forEach((icon, i) => {
+		icon.src = `images/icons/icon${i + 1}.png`
 	})
 
 
@@ -97,7 +97,7 @@ const makeCardActive = (i = 0) => {
 	featuredCards[i].classList.add('featured_card_active');
 	hoverImage[i].classList.remove('hover-image');
 	hoverImage[i].classList.add('hover-image-active');
-	featuredCardIcon[i].src = `images/icons/icon${i+1}-alt.png`;
+	featuredCardIcon[i].src = `images/icons/icon${i + 1}-alt.png`;
 	hoverImage[i].classList.add('fade');
 	featuredCards[i].classList.add('fade');
 };
@@ -108,7 +108,7 @@ makeCardActive();
 featuredCardsContainer.addEventListener('mouseover', (e) => {
 	const target = e.target;
 
-	if (target && target.classList.contains('f-card')){
+	if (target && target.classList.contains('f-card')) {
 		featuredCards.forEach((card, i) => {
 			if (target === card) {
 				makeCardsInactive();
@@ -133,14 +133,10 @@ slidesField.style.display = 'flex';
 
 slidesWrapper.style.overflow = 'hidden';
 
-/*slides.forEach(slide => {
-	slide.style.width = width;
-})*/
-
 let slidesMath = (slides.length % 2 === 0 ? slides.length - 2 : slides.length - 3)
 
 nextBtn.addEventListener('click', () => {
-	if (slideOffset === (+width.slice(0, width.length - 2) * (slides.length - slidesMath ))){
+	if (slideOffset === (+width.slice(0, width.length - 2) * (slides.length - slidesMath))) {
 		slideOffset = 0;
 	} else {
 		slideOffset += +width.slice(0, width.length - 2);
@@ -150,7 +146,7 @@ nextBtn.addEventListener('click', () => {
 })
 
 prevBtn.addEventListener('click', () => {
-	if (slideOffset === 0){
+	if (slideOffset === 0) {
 		slideOffset = +width.slice(0, width.length - 2) * (slides.length - slidesMath);
 	} else {
 		slideOffset -= +width.slice(0, width.length - 2);
@@ -158,3 +154,17 @@ prevBtn.addEventListener('click', () => {
 
 	slidesField.style.transform = `translateX(-${slideOffset}px)`;
 })
+
+const changingCards = document.querySelectorAll('.recipes-card');
+
+/*const changeCardToActive = (i) => {
+	changingCards[i].classList.add('recipes-card-active')
+}
+
+const changeCardFromActive = () => {
+	changingCards.forEach(card => {
+		if (card.classList.contains('recipes-card-active')) {
+			card.classList.remove('recipes-card-active')
+		}
+	})
+}*/

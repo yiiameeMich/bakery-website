@@ -333,7 +333,7 @@ section:last-of-type {
 .slide-to-next:hover, .slide-to-prev:hover {
     background-color: #000;
     outline: none;
-    border: 1px solid #fff;
+    border: 1px solid #ffffff;
     border-radius: 100%;;
 }
 
@@ -396,6 +396,7 @@ section:last-of-type {
     display:flex;
     justify-content: space-between;
     margin-bottom: 10%;
+    height: 380px;
 }
 
 .recipes-card {
@@ -403,7 +404,7 @@ section:last-of-type {
     display: flex;
     flex-direction: column;
     border: 1px solid black;
-    width: 25%
+    width: 20%
 }
 
 .main-text.rec-card {
@@ -427,8 +428,9 @@ section:last-of-type {
     position: relative;
 }
 
-.recipes-card:hover{
+.recipes-card-active{
     transform: scaleY(1.2);
+    width: 25%;
     background-color: #F5B162;
 }
 
@@ -438,9 +440,6 @@ section:last-of-type {
     right: 0;
 }
 
-.card-content:hover{
-    padding:12%
-}
 
 .recipes-heading > h1 {
     color: #fff;
@@ -562,6 +561,16 @@ section:last-of-type {
     .f-card{
         padding: 2%;
     }
+    .recipes-card > .card-content > .info-wrapper > .main-text {
+        font-size: 32px;
+    }
+    .recipes-card {
+        width: 70%;
+    }
+    .recipes-card-active{
+        width: 70%;
+        transform: none;
+    }
 }
 
 @media (max-width: 1220px) {
@@ -599,6 +608,12 @@ section:last-of-type {
     }
     .recipes-card {
         width:40%
+    }
+    .recipes-card > .card-content > .info-wrapper > .main-text {
+        font-size: 28px;
+    }
+    .recipes-card-active{
+        width: 60%
     }
 }
 
@@ -642,13 +657,14 @@ section:last-of-type {
     .cards-wrapper.recipes {
         flex-direction: column;
         align-items: center;
+        height: auto;
     }
     .products-heading {
         flex-direction: column;
         align-items: center;
     }
     .recipes-card > .card-content > .info-wrapper > .main-text {
-        font-size: 28px;
+        font-size: 24px;
     }
     .recipes-card > .card-content {
         padding: 5%;
@@ -658,6 +674,9 @@ section:last-of-type {
 @media (max-width: 852px) {
     .container {
         max-width: none;
+    }
+    .main-text {
+        font-size: 54px ;
     }
     .homepage-content {
         display: flex;
