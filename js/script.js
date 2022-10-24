@@ -1,3 +1,5 @@
+//about info section
+
 const aboutButtonsParent = document.querySelector('.about-btns'),
 	aboutButtons = document.querySelectorAll('.info-btn'),
 	aboutInfoHeadings = document.querySelectorAll('.secondary-text.info'),
@@ -63,6 +65,9 @@ aboutButtonsParent.addEventListener('click', (event) => {
 	}
 })
 
+
+//hover cards
+
 const featuredCardsContainer = document.querySelector('.featured_cards-wrapper'),
 	featuredCards = document.querySelectorAll('.featured_card'),
 	hoverImage = document.querySelectorAll('.featured_hover_image'),
@@ -118,6 +123,8 @@ featuredCardsContainer.addEventListener('mouseover', (e) => {
 	}
 });
 
+// slider
+
 const slides = document.querySelectorAll('.product-card'),
 	prevBtn = document.querySelector('.slide-to-prev'),
 	nextBtn = document.querySelector('.slide-to-next'),
@@ -154,6 +161,9 @@ prevBtn.addEventListener('click', () => {
 
 	slidesField.style.transform = `translateX(-${slideOffset}px)`;
 })
+
+
+// changing cards
 
 const changingCards = document.querySelectorAll('.recipes-card'),
 	recipesCardsWrapper = document.querySelector('.cards-wrapper.recipes')
