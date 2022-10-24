@@ -684,6 +684,14 @@ section:last-of-type {
     }
     .main-text {
         text-align: center;
+        font-size: 36px;
+    }
+    .primary-text {
+        text-align: center;
+    }
+    .recipes-heading > .main-text {
+        text-align: center;
+        font-size: 32px;
     }
 }
 

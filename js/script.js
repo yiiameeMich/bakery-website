@@ -140,7 +140,7 @@ slidesField.style.display = 'flex';
 
 slidesWrapper.style.overflow = 'hidden';
 
-let slidesMath = (slides.length % 2 === 0 ? slides.length - 2 : slides.length - 3)
+let slidesMath = (slides.length % 2 === 0 ? (slides.length - 2) : (slides.length - 3) )
 
 nextBtn.addEventListener('click', () => {
 	if (slideOffset === (+width.slice(0, width.length - 2) * (slides.length - slidesMath))) {
@@ -154,14 +154,13 @@ nextBtn.addEventListener('click', () => {
 
 prevBtn.addEventListener('click', () => {
 	if (slideOffset === 0) {
-		slideOffset = +width.slice(0, width.length - 2) * (slides.length - slidesMath);
+		slideOffset = +width.slice(0, width.length - 2) * (slides.length - slidesMath );
 	} else {
 		slideOffset -= +width.slice(0, width.length - 2);
 	}
 
 	slidesField.style.transform = `translateX(-${slideOffset}px)`;
 })
-
 
 // changing cards
 
@@ -175,7 +174,6 @@ const cardChanger = (i) => {
 	} else {
 		changingCards[i].classList.remove('recipes-card-active');
 		changingCards[i].classList.add('recipes-card');
-
 	}
 }
 
