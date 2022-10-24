@@ -155,16 +155,20 @@ prevBtn.addEventListener('click', () => {
 	slidesField.style.transform = `translateX(-${slideOffset}px)`;
 })
 
-const changingCards = document.querySelectorAll('.recipes-card');
+const changingCards = document.querySelectorAll('.recipes-card'),
+	recipesCardsWrapper = document.querySelector('.cards-wrapper.recipes')
 
-/*const changeCardToActive = (i) => {
-	changingCards[i].classList.add('recipes-card-active')
+const cardChanger = (i) => {
+	if (changingCards[i].classList.contains('recipes-card')) {
+		changingCards[i].classList.remove('recipes-card');
+		changingCards[i].classList.add('recipes-card-active');
+	} else {
+		changingCards[i].classList.remove('recipes-card-active');
+		changingCards[i].classList.add('recipes-card');
+
+	}
 }
 
-const changeCardFromActive = () => {
-	changingCards.forEach(card => {
-		if (card.classList.contains('recipes-card-active')) {
-			card.classList.remove('recipes-card-active')
-		}
-	})
-}*/
+let rndCard = Math.floor(Math.random()*4)
+
+cardChanger(rndCard)
