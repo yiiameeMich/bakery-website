@@ -701,10 +701,6 @@ section:last-of-type {
     .recipes-card > .card-content {
         padding: 5%;
     }
-    .product-card {
-        max-width: 250px;
-        height: 300px;
-    }
     .product-card > .sm-card-text > .main-text {
         font-size: 32px;
     }
@@ -822,5 +818,30 @@ section:last-of-type {
         top: 0;
         z-index: 11111;
         border-bottom: 1px solid #000;
+    }
+    .company-name {
+        padding: 0 15px;
+    }
+    #header-contact-btn {
+        font-size: 16px;
+        padding: 5px 15px;
+    }
+    .video-text-wrapper > .main-text {
+        font-size: 36px;
+        margin: 5px;
+    }
+    #play-btn > img{
+        width: 85%;
+    }
+    .fa-solid {
+        font-size: 15px;
+        padding: 10px;
+    }
+    .product-card {
+        width: 115px;
+        height: 200px;
+    }
+    .sm-card-text > .main-text{
+        display: none;
     }
 }
