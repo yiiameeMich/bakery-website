@@ -60,7 +60,36 @@ section:last-of-type {
     font-family: 'Oswald', serif;
     padding: 10px 25px;
     border-radius: 0;
+    transition: 0.7s ease;
 }
+
+#header-contact-btn:hover {
+    color: #F5B162;
+}
+
+.menu-wrap > .header-menu a {
+    transition: 0.7s ease;
+}
+
+.menu-wrap > .header-menu a:hover {
+    color: #F5B162;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+    margin: 15px;
+}
+.bar {
+    display: block;
+    width: 30px;
+    height: 4px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #000;
+}
+
 
 .homepage-content {
     display: flex;
@@ -693,6 +722,7 @@ section:last-of-type {
         text-align: center;
         font-size: 32px;
     }
+
 }
 
 @media (max-width: 852px) {
@@ -754,6 +784,43 @@ section:last-of-type {
     }
     .small-recipe-card-wrapper {
         margin: 0 2%;
-
+    }
+    .hamburger {
+        display: block;
+    }
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
+    }
+    .header-menu {
+        display: flex;
+        position: absolute;
+        left: -100%;
+        top: 100px;
+        z-index: 1;
+        gap: 0;
+        flex-direction: column;
+        background-color: #fff;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+    .header-nav_item {
+        margin: 25px 0;
+    }
+    .header-menu.active {
+        left: 0;
+        border-bottom: 1px solid #000;
+    }
+    .header {
+        position: sticky;
+        top: 0;
+        z-index: 11111;
+        border-bottom: 1px solid #000;
     }
 }

@@ -180,3 +180,20 @@ const cardChanger = (i) => {
 let rndCard = Math.floor(Math.random()*4)
 
 cardChanger(rndCard)
+
+//hamburger
+
+const hamburger = document.querySelector('.hamburger'),
+	headerMenu = document.querySelector('.header-menu')
+
+hamburger.addEventListener('click', () => {
+	hamburger.classList.toggle('active')
+	headerMenu.classList.toggle('active')
+})
+
+document.querySelectorAll('.header-nav_item').forEach((link) => {
+	link.addEventListener('click', () => {
+		hamburger.classList.remove('active')
+		headerMenu.classList.remove('active')
+	})
+})
