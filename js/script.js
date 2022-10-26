@@ -140,7 +140,7 @@ slidesField.style.display = 'flex';
 
 slidesWrapper.style.overflow = 'hidden';
 
-let slidesMath = (slides.length % 2 === 0 ? (slides.length - 2) : (slides.length - 3) )
+let slidesMath = (slides.length % 2 === 0 ? (slides.length - 2) : (slides.length - 3))
 
 nextBtn.addEventListener('click', () => {
 	if (slideOffset === (+width.slice(0, width.length - 2) * (slides.length - slidesMath))) {
@@ -154,7 +154,7 @@ nextBtn.addEventListener('click', () => {
 
 prevBtn.addEventListener('click', () => {
 	if (slideOffset === 0) {
-		slideOffset = +width.slice(0, width.length - 2) * (slides.length - slidesMath );
+		slideOffset = +width.slice(0, width.length - 2) * (slides.length - slidesMath);
 	} else {
 		slideOffset -= +width.slice(0, width.length - 2);
 	}
@@ -177,7 +177,7 @@ const cardChanger = (i) => {
 	}
 }
 
-let rndCard = Math.floor(Math.random()*4)
+let rndCard = Math.floor(Math.random() * 4)
 
 cardChanger(rndCard)
 
@@ -189,6 +189,11 @@ const hamburger = document.querySelector('.hamburger'),
 hamburger.addEventListener('click', () => {
 	hamburger.classList.toggle('active')
 	headerMenu.classList.toggle('active')
+	if (headerMenu.classList.contains('active') && hamburger.classList.contains('active')) {
+		document.body.style.overflow = 'hidden'
+	} else {
+		document.body.style.overflow = ''
+	}
 })
 
 document.querySelectorAll('.header-nav_item').forEach((link) => {
@@ -197,3 +202,35 @@ document.querySelectorAll('.header-nav_item').forEach((link) => {
 		headerMenu.classList.remove('active')
 	})
 })
+
+//modal
+
+const modalTrigger = document.querySelector('[data-modal]'),
+	modal = document.querySelector('.modal'),
+	modalCloseBtn = document.querySelector('[data-close]');
+
+const modalStateChanger = (classToAdd, classToRemove, bodyOverflowState) => {
+	modal.classList.add(classToAdd)
+	modal.classList.remove(classToRemove)
+	document.body.style.overflow = bodyOverflowState
+}
+
+modalTrigger.addEventListener('click', () => {
+	modalStateChanger('show', 'hide', 'hidden')
+})
+
+modalCloseBtn.addEventListener('click', () => {
+	modalStateChanger('hide', 'show', '')
+})
+
+modal.addEventListener('click', (e) => {
+	if (e.target === modal) {
+		modalStateChanger('hide', 'show', '')
+	}
+});
+
+document.addEventListener('keydown', (e) => {
+	if (e.code === "Escape" && modal.classList.contains('show')) {
+		modalStateChanger('hide', 'show', '')
+	}
+});
