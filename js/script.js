@@ -203,11 +203,19 @@ document.querySelectorAll('.header-nav_item').forEach((link) => {
 	})
 })
 
+document.addEventListener('keydown', (e) => {
+	if (e.code === "Escape" && headerMenu.classList.contains('active')) {
+		hamburger.classList.remove('active')
+		headerMenu.classList.remove('active')
+	}
+});
+
 //modal
 
 const modalTrigger = document.querySelector('[data-modal]'),
 	modal = document.querySelector('.modal'),
-	modalCloseBtn = document.querySelector('[data-close]');
+	modalCloseBtn = document.querySelector('[data-close]'),
+	contactBtn = document.querySelector('[data-contact]')
 
 const modalStateChanger = (classToAdd, classToRemove, bodyOverflowState) => {
 	modal.classList.add(classToAdd)
@@ -228,6 +236,10 @@ modal.addEventListener('click', (e) => {
 		modalStateChanger('hide', 'show', '')
 	}
 });
+
+contactBtn.addEventListener('click', () => {
+	modalStateChanger('hide', 'show', '')
+})
 
 document.addEventListener('keydown', (e) => {
 	if (e.code === "Escape" && modal.classList.contains('show')) {
